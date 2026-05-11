@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".Loan_prediction">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loan Prediction"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Spinners with labels for better UX -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gender" android:layout_marginTop="10dp"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/gender_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/btn_dropdown"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Marital Status" android:layout_marginTop="10dp"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/married_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/btn_dropdown"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Education" android:layout_marginTop="10dp"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/education_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/btn_dropdown"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Self Employed" android:layout_marginTop="10dp"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/employed_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/btn_dropdown"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Credit History" android:layout_marginTop="10dp"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/credit_history_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/btn_dropdown"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dependents" android:layout_marginTop="10dp"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/dependents_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/btn_dropdown"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Property Area" android:layout_marginTop="10dp"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/property_area_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/btn_dropdown"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/income_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Applicant Income">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/applicantIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/coapplicant_income_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Co-applicant Income">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/coapplicantIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loanamount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Loan Amount">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loanAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loanterm_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Loan Term (in days)">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/loanTerm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clear"
+                android:layout_marginEnd="5dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <Button
+                android:id="@+id/pred_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Predict"
+                android:layout_marginStart="5dp"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/loading_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/result_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prediction Result"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:id="@+id/result_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="16sp"
+                    android:textColor="#2E7D32"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
