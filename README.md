@@ -24,7 +24,7 @@ To build this project from source, your development machine needs:
 ## ⚙️ Installation & Setup
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/LoanPrediction-Android.git
+   git clone https://github.com/SaurabhAgrawal12112002/LoanPrediction-Android.git
    ```
 2. **Open in Android Studio**:
    - Wait for the Gradle sync to complete.
